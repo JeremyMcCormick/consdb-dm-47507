@@ -31,7 +31,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip uv
-          uv pip install --system lsst-felis testing.postgresql alembic sqlalchemy pyyaml black psycopg2-binary
+          uv pip install --system testing.postgresql alembic sqlalchemy pyyaml black psycopg2-binary
+          uv pip install lsst-felis @ git+http://github.com/lsst/felis.git@tickets/DM-46130
 
       - name: Determine branch name and commit SHA
         run: |
